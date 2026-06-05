@@ -25,9 +25,12 @@ console.log(second.textContent);
 
 // TODO 1: log all direct children of the menu
 
-for (let i = 0; i < menu.children.length; i++) {
-      console.log("all children:", menu.children[i].textContent);
-    }
+// for (let i = 0; i < menu.children.length; i++) {
+//       console.log("all children:", menu.children[i].textContent);
+//     }
+
+console.log("all children:", menu.children);
+
 
 // TODO 2: log just the first child element of the menu
 console.log("first child:", menu.firstElementChild.textContent);
