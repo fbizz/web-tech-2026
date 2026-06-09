@@ -14,7 +14,7 @@
 // ============================================================
 
 const items = document.querySelectorAll('[data-el="item"]');
-const list = document.querySelectorAll('[data-el="list"]');
+const list = document.querySelector('[data-el="list"]');
 const status = document.querySelector('[data-el="status"]');
 
 // TODO 1: loop over all items and add a click event listener to each one
@@ -28,14 +28,23 @@ for (let i = 0; i < items.length; i++){
 //         HINT: you can read and write inline styles via element.style.textDecoration
 //         HINT: use an if/else — check the current value and flip it
 
-function myF (){
-    if (this.style.textDecoration === "line-through"){
+function myF() {
+    if (this.style.textDecoration === "line-through") {
         this.style.textDecoration = "none";
     } else {
         this.style.textDecoration = "line-through";
     }
-}
 
 // TODO 3: after toggling, count how many items currently have line-through
 //         and update status.textContent
 //         HINT: loop over all items again and count the ones with line-through
+
+    let count = 0;
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].style.textDecoration === "line-through") {
+            count++;
+        }
+    }
+
+    status.textContent = count + " items done";
+}
